@@ -32,44 +32,35 @@
   <!-- Beginning main -->
   <main id="maincontent" >
     <div id-"container">
-      <div id="item1">
          <!-- Beginning map -->
     
     
-    <section id="map-container" > 
-      <!-- adding tabindex 0 to make it readable and give it label and role -->
-      <div id="map" tabindex="0" aria-label="map of restaurant" role="application"></div>
-    </section>
-    
-    <!-- End map -->
-      </div>
-      <div class="item2">
-         <!-- Beginning restaurant -->
-    
-    <section id="restaurant-container" tabindex="0" aria-label="Restaurant Information">
-      <h1 id="restaurant-name" tabindex="0" ></h1>
-      <img id="restaurant-img" tabindex="0">
-      <p id="restaurant-cuisine" tabindex="0"></p>
-      <p id="restaurant-address" tabindex="0"></p>
-      <table id="restaurant-hours" tabindex="0"></table>
-    </section>
-    <!-- end restaurant -->
-   
-      </div>
-      <div class="item3">
-         <!-- Beginning reviews -->
+      <section id="map-container" > 
+        <!-- adding tabindex 0 to make it readable and give it label and role -->
+        <div id="map" tabindex="0" aria-label="map of restaurant" role="application"></div>
+      </section>
+      
+      <!-- End map -->
+           <!-- Beginning restaurant -->
+      
+      <section id="restaurant-container" tabindex="0" aria-label="Restaurant Information">
+        <h1 id="restaurant-name" tabindex="0" ></h1>
+        <img id="restaurant-img" tabindex="0">
+        <p id="restaurant-cuisine" tabindex="0"></p>
+        <p id="restaurant-address" tabindex="0"></p>
+        <table id="restaurant-hours" tabindex="0"></table>
+      </section>
+      <!-- end restaurant -->
+     
+           <!-- Beginning reviews -->
 
-    <section id="reviews-container">
-      <ul id="reviews-list" aria-label="reviews list"></ul>
-    </section>
+      <section id="reviews-container">
+        <ul id="reviews-list" aria-label="reviews list"></ul>
+      </section>
     
     <!-- End reviews -->
 
-      </div>
     </div>
-   
-   
-   
   </main>
   <!-- End main -->
 
@@ -84,6 +75,7 @@
   <script type="text/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->
   <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <!-- registeration of service worker -->
   <script type="text/javascript" src="js/sw-registeration.js"></script>
   <!-- Google Maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLg9ffgWzJLF8GAYnZbFyQzkn-wd8h6jE&libraries=places&callback=initMap"></script>

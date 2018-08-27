@@ -191,8 +191,8 @@ createRestaurantHTML = (restaurant) => {
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  //added tabindex attribute with value 0 to make it focusable
   name.setAttribute("tabindex","0");
-  //name.setAttribute("role","Heading")
   li.append(name);
 
   const neighborhood = document.createElement('p');
