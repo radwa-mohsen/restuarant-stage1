@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+
 });
+
 
 /**
  * Fetch all neighborhoods and set their HTML.
@@ -71,6 +73,24 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 /**
  * Initialize leaflet map, called from HTML.
  */
+// initMap = () => {
+//   self.newMap = L.map('map', {
+//         center: [40.722216, -73.987501],
+//         zoom: 12,
+//         scrollWheelZoom: false
+//       });
+//   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
+//     mapboxToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
+//     maxZoom: 18,
+//     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+//       '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+//       'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+//     id: 'mapbox.streets'
+//   }).addTo(newMap);
+
+//   updateRestaurants();
+// }
+
 initMap = () => {
   self.newMap = L.map('map', {
         center: [40.722216, -73.987501],
@@ -78,7 +98,7 @@ initMap = () => {
         scrollWheelZoom: false
       });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-    mapboxToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
+    mapboxToken: 'pk.eyJ1IjoicmFkd2Ftb2hzZW4iLCJhIjoiY2psMHc5dGlpMTlmZjNwbzZ2ZnN1NjJsbyJ9.J3uh_8Y8B5gpzNJNKj24eA',
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
       '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -88,6 +108,8 @@ initMap = () => {
 
   updateRestaurants();
 }
+
+
 //  window.initMap = () => {
 //   let loc = {
 //     lat: 40.722216,
@@ -118,6 +140,7 @@ updateRestaurants = () => {
     if (error) { // Got an error!
       console.error(error);
     } else {
+      
       resetRestaurants(restaurants);
       fillRestaurantsHTML();
     }
@@ -161,10 +184,15 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  //add alt attribute to be available in the reader
+
+   image.alt = `${restaurant.name} Restaurant`;
   li.append(image);
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  name.setAttribute("tabindex","0");
+  //name.setAttribute("role","Heading")
   li.append(name);
 
   const neighborhood = document.createElement('p');
@@ -178,6 +206,7 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.setAttribute("aria-label",`View Details of ${restaurant.name} Restaurant`);
   li.append(more)
 
   return li
