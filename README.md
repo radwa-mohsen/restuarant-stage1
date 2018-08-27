@@ -16,14 +16,10 @@ Restaurant Reviews App (Stage 1)
 
 In this project, a static webpage that lacks accessibility is given to be converted into a mobile-ready web application. The design  must be responsive on different sized displays and also accessible for screen reader use. And added a service worker to begin the process of creating a seamless offline experience for the users.
 
-## Run the Application
+## How to Run  ?
 
-In order to run the application you have some options:
-
-1. Open it [here](https://radwa-mohsen.github.io/restuarant-stage1/)
-
-2. Run it localy
-* Download as .zip file or clone this project:
+ Run it in your desktop : 
+* clone this project:
 
     ```
     $ git clone https://github.com/radwa-mohsen/restuarant-stage1.git
@@ -34,6 +30,8 @@ In order to run the application you have some options:
 * In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
 
 * With your server running, visit the site: `http://localhost:8000`.
+
+You can also  Open it [here](https://radwa-mohsen.github.io/restuarant-stage1/)
 
 ## Code Dependencies
 
